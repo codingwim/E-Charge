@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/UsersFragment">
+
+    <fragment
+        android:id="@+id/UsersFragment"
+        android:name="com.codingschool.e_charge.UsersFragment"
+        android:label="Users"
+        tools:layout="@layout/fragment_users">
+
+        <action
+            android:id="@+id/toStationsFragment"
+            app:destination="@id/StationsFragment" />
+        <action
+            android:id="@+id/toAddUserFragment"
+            app:destination="@id/AddUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/StationsFragment"
+        android:name="com.codingschool.e_charge.StationsFragment"
+        android:label="Stations"
+        tools:layout="@layout/fragment_stations">
+
+        <action
+            android:id="@+id/toUsersFragment"
+            app:destination="@id/UsersFragment" />
+        <argument
+            android:name="user_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/toNewStationFragment"
+            app:destination="@id/NewStationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/AddUserFragment"
+        android:name="com.codingschool.e_charge.AddUserFragment"
+        android:label="Add a user"
+        tools:layout="@layout/fragment_add_user">
+        <action
+            android:id="@+id/toFirstFragment"
+            app:destination="@id/UsersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/NewStationFragment"
+        android:name="com.codingschool.e_charge.NewStationFragment"
+        android:label="New station" >
+        <argument
+            android:name="user_id"
+            app:argType="integer" />
+    </fragment>
+</navigation>

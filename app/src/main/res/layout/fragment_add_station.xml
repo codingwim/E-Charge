@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilStreet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:hint="Street"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@+id/tilNumber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etStreet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:hint="Number"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@+id/tilZip"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilStreet">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilZip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:hint="ZIP"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@+id/tilTown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilNumber">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etZip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilTown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:hint="Town"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@+id/tilCountry"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilZip">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:hint="Country"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@+id/tvCarPlugs"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilTown">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCountry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvCarPlugs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="# Car plugs  "
+            app:layout_constraintBottom_toTopOf="@id/npCarPlugs"
+            app:layout_constraintEnd_toStartOf="@+id/tvBikePlugs"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilCountry" />
+
+        <NumberPicker
+            android:id="@+id/npCarPlugs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toTopOf="@id/btRegister"
+            app:layout_constraintEnd_toEndOf="@+id/tvCarPlugs"
+            app:layout_constraintStart_toStartOf="@+id/tvCarPlugs"
+            app:layout_constraintTop_toBottomOf="@+id/tvCarPlugs" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBikePlugs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text=" # Bike plugs"
+            app:layout_constraintBottom_toTopOf="@+id/npBikePlugs"
+            app:layout_constraintEnd_toStartOf="@id/tvBikePlugs"
+            app:layout_constraintStart_toEndOf="@id/tvCarPlugs"
+            app:layout_constraintTop_toBottomOf="@+id/tilCountry" />
+
+        <NumberPicker
+            android:id="@+id/npBikePlugs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/npCarPlugs"
+            app:layout_constraintEnd_toEndOf="@+id/tvBikePlugs"
+            app:layout_constraintStart_toStartOf="@+id/tvBikePlugs"
+            app:layout_constraintTop_toTopOf="@+id/npCarPlugs" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBoatPlugs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="# Boat plugs"
+            app:layout_constraintBottom_toTopOf="@id/npBoatPlugs"
+            app:layout_constraintEnd_toStartOf="@id/tvPlanePlugs"
+            app:layout_constraintStart_toEndOf="@id/tvBikePlugs"
+            app:layout_constraintTop_toBottomOf="@+id/tilCountry" />
+
+        <NumberPicker
+            android:id="@+id/npBoatPlugs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/npCarPlugs"
+            app:layout_constraintEnd_toEndOf="@+id/tvBoatPlugs"
+            app:layout_constraintStart_toStartOf="@+id/tvBoatPlugs"
+            app:layout_constraintTop_toTopOf="@+id/npCarPlugs" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvPlanePlugs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="# Plane plugs"
+            app:layout_constraintBottom_toTopOf="@id/npPlanePlugs"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvBoatPlugs"
+            app:layout_constraintTop_toBottomOf="@+id/tilCountry" />
+
+        <NumberPicker
+            android:id="@+id/npPlanePlugs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/npCarPlugs"
+            app:layout_constraintEnd_toEndOf="@+id/tvPlanePlugs"
+            app:layout_constraintStart_toStartOf="@+id/tvPlanePlugs"
+            app:layout_constraintTop_toTopOf="@+id/npCarPlugs" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="Add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/npCarPlugs" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
